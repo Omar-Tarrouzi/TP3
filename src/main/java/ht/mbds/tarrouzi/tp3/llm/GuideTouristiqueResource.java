@@ -1,10 +1,7 @@
 package ht.mbds.tarrouzi.tp3.llm;
 
 import jakarta.inject.Inject;
-import jakarta.ws.rs.GET;
-import jakarta.ws.rs.Path;
-import jakarta.ws.rs.PathParam;
-import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 
 @Path("/guide")
@@ -12,11 +9,13 @@ public class GuideTouristiqueResource {
     @Inject
     private GuideTouristiqueService guideTouristiqueService;
     @GET
-    @Path("lieu/{ville_ou_pays}")
+    @Path("lieu/{ville_ou_pays}/{nb}")
     @Produces(MediaType.APPLICATION_JSON)
 
-    public String endroitsDeVisite(
-            @PathParam("ville_ou_pays") String villeOuPays) {
-        return guideTouristiqueService.conseiller(villeOuPays);
-    }
-}
+    public String endroitsDeVisiteAvecNombre(
+            @PathParam("ville_ou_pays") String villeOuPays,
+            @PathParam("nb") int nb) {
+
+        return guideTouristiqueService.conseiller(villeOuPays, nb);
+
+}}

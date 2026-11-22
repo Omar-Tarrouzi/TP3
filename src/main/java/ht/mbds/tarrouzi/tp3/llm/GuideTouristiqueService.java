@@ -20,7 +20,9 @@ public class GuideTouristiqueService {
         guide = AiServices.create(GuideTouristique.class, modele);
     }
 
-    public String conseiller(String lieu) {
-        return guide.conseiller(lieu);
+    public String conseiller(String lieu,int nb) {
+        String message = "Lieu demandé : %s. Propose exactement %d endroits à visiter."
+                .formatted(lieu, nb);
+        String reponse = guide.conseiller(message);
+        return reponse;}
     }
-}
