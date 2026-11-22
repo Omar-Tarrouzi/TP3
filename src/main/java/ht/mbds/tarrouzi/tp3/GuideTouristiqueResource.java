@@ -12,8 +12,8 @@ public class GuideTouristiqueResource {
     @GET
     @Path("lieu/{ville}")
     @Produces(MediaType.APPLICATION_JSON)
-    public String endroitsDeVisite(
-            @PathParam("ville") String ville) {
-        return ville;
+    public String[] endroitsDeVisite(
+            @PathParam("ville") String villeOuPays) {
+        return new String[] { villeOuPays };
     }
 }
