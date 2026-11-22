@@ -1,0 +1,3 @@
+prompt : je ne vois plus classe et package dans la liste déroulante d'intellij , ai je modifier la configuration sans me rendre compte ?
+solution : IntelliJ isn't treating that file’s folder as a Java source root. A failed Maven import can leave the source folders unconfigured, or the file can simply be outside src/main/java
+juste une erreur de frappe dans le pom.xml  a fait que  la synchronisation Maven échouait sans erreur évidente , une fois corrigé et reync la configuration est redevenu normale 
