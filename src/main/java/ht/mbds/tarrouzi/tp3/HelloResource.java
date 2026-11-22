@@ -13,6 +13,8 @@ public class HelloResource {
     @Path("personnes/{nom}")
     @Produces("text/plain")
     public Response hello(@PathParam("nom") String nom) {
-        return Response.ok("Hello, " + nom).build();
+        //return Response.ok("Hello, " + nom).build();
+        return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity("Internal Server Error")
+                .build();
     }
 }
